@@ -30,7 +30,7 @@ function PortfolioAbout() {
                 "Developed responsive web pages using HTML5, CSS3, and JavaScript, applied interactive UI components, and improved overall user experience by fixing UI issues, debugging frontend code, and optimizing webpage performance.",
         },
         {
-            year: "Sep 2024 - Dec 2024 | June 2025 - Nov 2025",
+            year: " June 2025 - Nov 2025",
             position: "Full-Stack Web Development Intern",
             company: "YHills Edtech Pvt. Ltd. (Virtual)",
             description:
