@@ -8,7 +8,7 @@ import {
     Linkedin,
     Github,
 } from "lucide-react";
-import axios from "axios";
+import emailjs from "@emailjs/browser";
 
 function PortfolioContact() {
     const [isVisible, setIsVisible] = useState(false);
@@ -30,33 +30,31 @@ function PortfolioContact() {
         setFormState((prev) => ({ ...prev, [name]: value }));
     };
 
-    const portalId = "242636988";    
-    const formId = "2833a34c-1645-455c-a6b6-78a6e01445bd";  
+    const serviceID = "service_v0mejgn";
+    const templateID = "template_wsam3mj";
+    const publicKey = "fMtmz76rHMAzD-aLE"; 
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const { name, email, subject, message } = formState;
 
-        const data = {
-            fields: [
-                { name: "full_name", value: name },
-                { name: "email", value: email },
-                { name: "subject", value: subject },
-                { name: "message", value: message },
-            ],
+        const templateParams = {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
         };
 
         try {
-            const response = await axios.post(
-                `https://api-na2.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
-                data,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }
+            const response = await emailjs.send(
+                serviceID,
+                templateID,
+                templateParams,
+                publicKey
             );
+
             if (response.status === 200) {
+                alert("Message sent successfully!");
                 setFormState({
                     name: "",
                     email: "",
@@ -66,6 +64,7 @@ function PortfolioContact() {
             }
         } catch (error) {
             console.error("Error submitting form:", error);
+            alert("Failed to send message, please try again later.");
         }
     };
 
@@ -102,7 +101,6 @@ function PortfolioContact() {
             className='bg-black text-white py-16 md:py-4 lg:py-8 overflow-hidden'>
             <div className='max-w-[768px] w-full xl:max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8'>
                 
-            
                 <div className='text-center mb-16'>
                     <div className='flex items-center justify-center space-x-3 mb-6'>
                         <div className='h-1 w-10 bg-indigo-500' />
@@ -122,7 +120,6 @@ function PortfolioContact() {
                     </p>
                 </div>
 
-        
                 <div className='flex flex-col justify-center items-center md:flex-row gap-8 lg:gap-12'>
                     
                     <div
