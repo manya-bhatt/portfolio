@@ -1,5 +1,24 @@
 @import "@traken-ui/react/dist/traken-theme.css";
 @import "@traken-ui/react/dist/esm/index.css";
-
 @import "tailwindcss";
+.container {
+    width: 80%;
+}
 
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-section {
+        padding: 20px;
+    }
+}
