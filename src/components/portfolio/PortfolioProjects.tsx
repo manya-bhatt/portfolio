@@ -18,13 +18,13 @@ function PortfolioProjects() {
 
     const projects = [
         {
-            title: "Smart Shop E-Commerce",
+            title: "ShopEasy Full-Stack E-Commerce",
             description:
-                "Built a dynamic e-commerce platform featuring seamless product browsing, cart management, responsive design, and user authentication to deliver an intuitive online shopping experience.",
+                "A production-ready MERN e-commerce web application featuring secure JWT user authentication, a comprehensive admin dashboard, multi-image product uploading via Cloudinary, dynamic gallery views, order management, and responsive design.",
             image: "/smartShop.png",
-            tags: ["React.js", "Node.js", "Tailwind CSS", "JavaScript"],
+            tags: ["React.js", "Node.js", "Express", "MongoDB", "Cloudinary", "Tailwind CSS"],
             githubUrl: "https://github.com/manya-bhatt",
-            liveUrl: "https://manya-smart-shop.netlify.app/",
+            liveUrl: "https://ecommerce-app-manya24.vercel.app/",
             featured: true,
             icon: <ShoppingBag className='w-5 h-5' />,
         },
