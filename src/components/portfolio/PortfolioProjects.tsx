@@ -6,6 +6,7 @@ import {
     ShoppingBag,
     FileText,
     Calendar,
+    Sprout,
 } from "lucide-react";
 import { Card, CardBody, CardHeader } from "@traken-ui/react";
 
@@ -29,6 +30,17 @@ function PortfolioProjects() {
             icon: <ShoppingBag className='w-5 h-5' />,
         },
         {
+            title: "Crop Disease Detection & Advisory System",
+            description:
+                "An AI-powered web application built with Python, TensorFlow, and Streamlit to classify 38 crop leaf diseases using a fine-tuned MobileNetV2 CNN model. Features Grad-CAM heatmaps for explainable AI, multilingual treatment advice, downloadable PDF reports, and an interactive Groq-powered agricultural chatbot.",
+            image: "/cropCare.png",
+            tags: ["Python", "TensorFlow", "Streamlit", "Groq API", "OpenCV", "ReportLab"],
+            githubUrl: "https://github.com/manya-bhatt/cropcare-ai",
+            liveUrl: "https://cropcare-ai-manya.streamlit.app",
+            featured: true,
+            icon: <Sprout className='w-5 h-5' />,
+        },
+        {
             title: "AI Resume Analyzer",
             description:
                 "An intelligent web application that evaluates and parses resumes, offering keyword optimization, skill matching feedback, and insights to help job seekers improve their resumes.",
@@ -36,25 +48,14 @@ function PortfolioProjects() {
             tags: ["React.js", "Python", "Flask", "Tailwind CSS"],
             githubUrl: "https://github.com/manya-bhatt",
             liveUrl: "https://manya-resume-analyzer.netlify.app/",
-            featured: true,
-            icon: <FileText className='w-5 h-5' />,
-        },
-        {
-            title: "Deepfake Detection using CNN and GAN",
-            description:
-                "Developed a model to detect AI-generated deepfake images and videos using Convolutional Neural Networks and Generative Adversarial Networks. Implemented and trained models on Google Colab using Python and TensorFlow, achieving accurate classification by analyzing visual artifacts.",
-            image: "/deepfakeDetection.png",
-            tags: ["Python", "TensorFlow", "Google Colab", "CNN", "GAN"],
-            githubUrl: "https://github.com/manya-bhatt",
-            liveUrl: "",
             featured: false,
-            icon: <ShieldAlert className='w-5 h-5' />,
+            icon: <FileText className='w-5 h-5' />,
         },
         {
             title: "College Event Management System",
             description: "A comprehensive platform to manage college events, handle registrations, schedule activities, and coordinate fest details seamlessly.",
             tags: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
-            image: "/images/event-management.png",  
+            image: "/images/event-management.png", 
             githubUrl: "https://github.com/manya-bhatt",
             liveUrl: "",
             featured: false,
