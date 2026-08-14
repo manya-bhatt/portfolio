@@ -85,58 +85,63 @@ function PortfolioProjects() {
                     </p>
                 </div>
 
-                <div className='flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 lg:gap-16 mb-20'>
+                <div className='flex flex-col md:flex-row items-stretch justify-center gap-6 md:gap-12 lg:gap-16 mb-20'>
                     {projects
                         .filter((project) => project.featured)
                         .map((project, index) => (
                             <Card
                                 key={index}
-                                className={`group relative rounded-2xl overflow-hidden border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-500 transform hover:border-indigo-500 p-0 ${
+                                className={`group relative rounded-2xl overflow-hidden border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-500 transform hover:border-indigo-500 p-0 flex flex-col justify-between h-full w-full md:w-[45%] ${
                                     isVisible
                                         ? "translate-y-0 opacity-100"
                                         : "translate-y-12 opacity-0"
                                 }`}>
-                                <CardHeader className='p-6 bg-transparent'>
-                                    <div className='absolute top-4 right-4 flex space-x-2'>
-                                        {project.githubUrl && (
-                                            <a
-                                                href={project.githubUrl}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                                className='bg-black/50 hover:bg-indigo-600 p-2 rounded-full backdrop-blur-sm transition-colors duration-300'>
-                                                <Github
-                                                    size={18}
-                                                    className='text-white'
-                                                />
-                                            </a>
-                                        )}
-                                        {project.liveUrl && (
-                                            <a
-                                                href={project.liveUrl}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                                className='bg-black/50 hover:bg-indigo-600 p-2 rounded-full backdrop-blur-sm transition-colors duration-300'>
-                                                <ExternalLink
-                                                    size={18}
-                                                    className='text-white'
-                                                />
-                                            </a>
-                                        )}
-                                    </div>
-                                </CardHeader>
-
-                                <CardBody className='p-4 sm:p-6 bg-transparent text-gray-300'>
-                                    <div className='flex items-center mb-3'>
-                                        <div className='bg-indigo-500/20 text-indigo-400 p-2 rounded-lg mr-3'>
-                                            {project.icon}
+                                <div>
+                                    <CardHeader className='p-6 bg-transparent'>
+                                        <div className='absolute top-4 right-4 flex space-x-2'>
+                                            {project.githubUrl && (
+                                                <a
+                                                    href={project.githubUrl}
+                                                    target='_blank'
+                                                    rel='noopener noreferrer'
+                                                    className='bg-black/50 hover:bg-indigo-600 p-2 rounded-full backdrop-blur-sm transition-colors duration-300'>
+                                                    <Github
+                                                        size={18}
+                                                        className='text-white'
+                                                    />
+                                                </a>
+                                            )}
+                                            {project.liveUrl && (
+                                                <a
+                                                    href={project.liveUrl}
+                                                    target='_blank'
+                                                    rel='noopener noreferrer'
+                                                    className='bg-black/50 hover:bg-indigo-600 p-2 rounded-full backdrop-blur-sm transition-colors duration-300'>
+                                                    <ExternalLink
+                                                        size={18}
+                                                        className='text-white'
+                                                    />
+                                                </a>
+                                            )}
                                         </div>
-                                        <h3 className='text-lg sm:text-xl md:text-2xl font-bold truncate'>
-                                            {project.title}
-                                        </h3>
-                                    </div>
-                                    <p className='text-gray-300 mb-4 text-sm sm:text-base'>
-                                        {project.description}
-                                    </p>
+                                    </CardHeader>
+
+                                    <CardBody className='p-4 sm:p-6 bg-transparent text-gray-300'>
+                                        <div className='flex items-center mb-3'>
+                                            <div className='bg-indigo-500/20 text-indigo-400 p-2 rounded-lg mr-3'>
+                                                {project.icon}
+                                            </div>
+                                            <h3 className='text-lg sm:text-xl md:text-2xl font-bold truncate'>
+                                                {project.title}
+                                            </h3>
+                                        </div>
+                                        <p className='text-gray-300 mb-4 text-sm sm:text-base'>
+                                            {project.description}
+                                        </p>
+                                    </CardBody>
+                                </div>
+
+                                <div className='p-4 sm:p-6 pt-0 bg-transparent'>
                                     <div className='flex flex-wrap gap-2'>
                                         {project.tags.map((tag, tagIndex) => (
                                             <span
@@ -146,7 +151,7 @@ function PortfolioProjects() {
                                             </span>
                                         ))}
                                     </div>
-                                </CardBody>
+                                </div>
                             </Card>
                         ))}
                 </div>
