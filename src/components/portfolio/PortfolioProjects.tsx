@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import {
     Github,
     ExternalLink,
-    ShieldAlert,
     ShoppingBag,
     FileText,
     Calendar,
